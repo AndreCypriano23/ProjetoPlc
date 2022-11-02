@@ -1,0 +1,17 @@
+
+
+
+CREATE TABLE PLC(
+Id INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
+Nome VARCHAR (20),
+Interlook INT 
+)
+GO
+
+
+
+INSERT INTO PLC(Nome, Interlook)  
+VALUES ('PLC 1', 1)
+
+INSERT INTO PLC(Nome, Interlook)  
+VALUES ('PLC 2', 0),('PLC 3', 1),('PLC 4', 1),('PLC 5', 1),('PLC 6', 1)

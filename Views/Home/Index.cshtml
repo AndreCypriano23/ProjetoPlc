@@ -1,0 +1,56 @@
+﻿@model IEnumerable<ProjetoPLC.Models.Plc>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+   <h1 class="display-4">HOME</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">Liga e Desliga de PLCs</a>.</p>
+
+     
+         @using (Html.BeginForm("Mudar", "Home", FormMethod.Post))
+        {  
+       <div>
+           <table>
+               
+            <tbody>
+
+            @foreach (var item in Model)
+            {
+                <tr class="col-md-12">
+
+                    <td class="row">
+                        <div class="col-md-6">
+                           <img src="~/images/plc.jpg" />
+                           @Html.DisplayFor(modelItem => item.Nome)  
+                           @Html.CheckBox("Trocar.Selecionado", true); Ligar/Desligar
+                           @Html.DisplayFor(modelItem => item.Interlook)
+                           <!--<input asp-action="MudarInterlook" type="checkbox" name="Ids" value="item.Id" />-->
+                           <!--<input asp-action="MudarInterlook" id="@item.Id" name="Selecionado" value="true" type="checkbox" />-->
+                           <!--<button asp-action="MudarInterlook" class="btn waves-effect waves-light blue darken-2" type="submit" name="action">
+                                Ligar/Desligar
+                            </button>      <a  asp-route-id="@item.Id"-->
+                            <!--<input asp-action="MudarInterlook" type="checkbox" id="" name="Ids" value="item.Id" />-->
+                            <div class="text-center">
+                                <a  asp-action="Mudar" asp-controller="home"  asp-route-id="@item.Id"
+                                class="btn btn-success">Ligar/Desligar</a>
+
+                            </div>
+                            
+                        </div>
+                        <div class="col-md-6">
+
+                        </div>
+    
+                    </td>
+                </tr>
+            }
+            </tbody>
+            </table>
+            </div>
+           
+
+         
+
+ }
+</div>
